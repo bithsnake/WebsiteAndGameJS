@@ -1,0 +1,26 @@
+<!-- <html onkeypress="movePlayer(),playerJump()" onkeyup="stopPlayerHorizontalMovement()" > -->
+<html onkeypress="movePlayer()">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="canvasgame.css">
+    <style>
+    canvas{
+        border: 1px solid black;
+        background-color: lightgray;
+        background-image: url("./sprites/bg/bg0.png");
+        background-repeat: no-repeat;
+        background-size: 1024px 512px;
+    }
+    </style>
+</head>
+<body onload="startGame()">
+    <p style="color:white" style="font-size: medium;">Varför inte underhålla lite musik till spelet?</p>
+    <audio src="./myownmusic0.mp3" controls autoplay type="audio/mpeg"></audio>
+    <img class="player" id="playeridle"     src="./sprites/idle/idle0.png" style="display: none" alt="">
+    <img class="player" id="playerjump"     src="./sprites/jump/jump0.png" style="display: none" alt="">
+    <img class="player" id="playergethit"   src="./sprites/hit/hit0.png" style="display: none" alt="">
+    <img class="player" id="playerdead"     src="./sprites/dead/dead0.png" style="display: none" alt="">
+</body>
+
+<script src="canvasgame.js"></script>
+</html>

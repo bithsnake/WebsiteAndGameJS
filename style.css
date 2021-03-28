@@ -1,0 +1,104 @@
+:root{
+    background-color: black;
+    /* background-image: url("./background0.jpg"); */
+    background-repeat: repeat-x;
+    background-size: 256px 128px;
+    background-attachment: fixed;
+
+    background-blend-mode:hard-light;
+    /* background-image: url("./background0.jpg"); */
+    /* background-repeat: repeat-x;
+    background-clip: border-box; */
+    font-family: Helvetica, sans-serif;
+    color: rgb(168, 156, 156);
+}
+
+/* #myGame{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;   
+}
+#myForms{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;  
+} */
+/* html{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+} */
+#adjustYPosition{
+    margin-top: 16rem;
+}
+.input-boxes{
+    display: block;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    display: block;
+    position: fixed;
+    top: 0rem;
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    color: indianred;
+}
+
+h3{
+    color: cornflowerblue;
+}
+
+input{
+    width: 13rem;
+}
+
+
+.warning {
+    border: 2px solid #f39389;
+    border-radius: 2px;
+    padding: 10px;
+    position: absolute;
+    background-color: #fbd8d4;
+    color: #3b3c40;
+  }
+
+  #reseformular input[type=text]{
+      border-style: solid;
+      border-color: lightskyblue;
+  }
+
+  #formular_output{
+    border-style: solid;
+    border-color: lightskyblue;
+    display: none;
+    width: fit-content;
+  }
+
+  #rotateButtonForms.initRotation, #rotateButtonGame.initRotation{
+    transform : rotate(180deg);
+  }
+
+  #rotateButtonForms.isRotating, #rotateButtonGame.isRotating , #rotateButtonForms.initRotation, #rotateButtonGame.initRotation{
+    transform : rotate(180deg);
+  }
+
+  #rotateButtonForms, #rotateButtonGame{
+    position:relative;
+    height: 64;
+    width: 64;
+    margin: 30px;
+    /* background: lightskyblue; */
+    transform : rotate(0deg);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}

@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Uppgifter Vecka 2</title>
+    <style>.error {color:red;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        canvas{
+            border: 1px solid black;
+            background-color: lightgray;
+            background-image: url("./sprites/bg/bg0.png");
+            background-repeat: no-repeat;
+            background-size: 1024px 512px;
+        }
+    </style>
+    <audio id="myAudio" autoplay>
+        <source src="./myownmusic0.mp3" type="audio/mpeg">
+        </audio>
+        <img class="player" id="playeridle"     src="./sprites/idle/idle0.png" style="display: none" alt="">
+        <img class="player" id="playerjump"     src="./sprites/jump/jump0.png" style="display: none" alt="">
+        <img class="player" id="playergethit"   src="./sprites/hit/hit0.png" style="display: none" alt="">
+        <img class="player" id="playerdead"     src="./sprites/dead/dead0.png" style="display: none" alt="">
+
+</head>
+
+<header><h1 style="color: rgb(45, 219, 235);">Hemsida Test</h1></header>
+<body onkeypress="movePlayer()" onload="startGame()" >
+    <main>
+    <div id="adjustYPosition"></div>
+    <!-- <button id="rotateButton"> Visa formulär uppgifter</button> -->
+    <div id="rotateButtonForms"><img src="./button0.png" alt=""></div><span><p style="color: rgb(59, 236, 221)">Visa formulär uppgiferna</p></span>
+    <div id="myForms">
+    <br/>
+        <section>
+                <h2>VECKA 2</h2> <span>Klicka här för att spela mitt spel!</span>
+                <!-- Uppgift 3 Omjord till ett form element med Domskript -->
+                <article>
+                    <h3>Uppgift 3 Gissa ett tal (skrivs ut i HTML dokumentet)</h3>
+                    <form action="/action_page.php" autocomplete="off">
+                        <label for="guess_number_label">Vilket nummer tror du jag tänker på?</label><br>
+
+                        <input type="text" id="gissa_ett_tal_input" name="guess_number_label" placeholder="Skriv in en siffra mellan 1 och 10" onblur="this.placeholder='Skriv in en siffra mellan 1 och 10'" value="" onfocus="this.placeholder =''"><span><button type="submit" id="subm1">Roll the dice</button></span>
+                        <!-- <span class="error"></span> -->
+                        <br>
+                    </form>               
+                    <p id="output_gissa_ett_tal">Ditt tal kommer att visas här</p>
+                </article>
+    
+                <!-- Uppgift 5 Omgjord till ett form element med jQuery-->
+                <article>
+                    <h3>Uppgift 5 Rövarspråket (skrivs ut i HTML dokumentet)</h3>
+                    <form action="/action_page.php" autocomplete="off">
+                        <label for="translate_to_rovarspraket">Skriv en text nedan som sedan översätt till rövarspråket</label><br>
+
+                        <input type="text" id="rovarspraket_input" name="guess_number_label" placeholder="Skriv din text här" onblur="this.placeholder='Skriv din text här'" value="" onfocus="this.placeholder =''"><span><button type="submit" id="subm_rovar">Översätt</button></span>
+                        <!-- <span class="error"></span> -->
+                        <br>
+                    </form>               
+                    <p id="output_rovarspraket">Dina översatta text kommer att visas här</p>
+                </article>
+        </section>
+
+        <section>
+            <h3>Reseformulär</h3>
+            <form id="reseformular" action="/action_page.php">
+                <!-- First name -->
+                <label for="fname_field">First name:</label><br>
+                <input type="text"      id="fname_field" class="input_field"    name="fname_field"      placeholder="Input Name"        onblur="this.placeholder='Input Name'"          value="" onfocus="this.placeholder =''"><span id="fname_error" style="color:red"></span><br>
+
+                <!-- Last Name -->
+                <label for="lname_field">Last name:</label><br>
+                <input type="text"      id="lname_field"                        name="lname_field"      placeholder="Input Lastname"    onblur="this.placeholder='Input Last3name'"     value="" onfocus="this.placeholder =''"><span id="lname_error" style="color:red"></span><br><br>
+
+                <!-- Zip code -->
+                <label for="zipcode_field">Zipcode:</label><br>
+                <input type="text"      id="zipcode_field"                      name="zipcode_field"    placeholder="Input Zipcode"     onblur="this.placeholder='Input Zipcode'"       value="" onfocus="this.placeholder =''"><br><span id="zipcode_error" style="color:red"></span><br>
+                
+                <!-- Mailadress -->
+                <label for="mailadress_field">E-mail adress:</label><br>
+                <input type="email"     id="mailadress_field"                   name="email"            placeholder="Input Emailadress" onblur="this.placeholder='ex: namn@domän.com'"  value="" onfocus="this.placeholder =''"><br><span id="mailadress_error" style="color:red"></span><br>
+
+                <!-- Password -->
+                <label for="password_field">Password:</label><br>
+                <input type="password"  id="password_field"                     name="password_field"   placeholder="Input Password"    onblur="this.placeholder='Input Password'"      value="" onfocus="this.placeholder =''"><span id="password_error" style="color:red"></span><br><br>
+                <!-- Submit Button -->
+                <input style="color:lightslategray" type="submit"    id="subm_formular" value="Skicka formulär">
+            </form>
+            <p id="formular_output" style="color: lightseagreen;"></p>
+        </section>
+    </div>
+    </main>
+    <br/>
+    <br/>
+    <br/>
+    <div id="rotateButtonGame"><img src="./button0.png" alt=""></div><span><p style="color: rgb(218, 37, 148)">Visa mitt spel</p></span>
+    <div id="myGame">
+        <h2 style="display: flex; position: relative; margin-left: 26rem;">CYBERJUMP</h3>
+        <h3 style="display: flex; position: relative; margin-left: 26rem;">Du styr med a & d</h3>
+        <section>
+            <span><button type="submit" id="gameButton" style="display: block; position:relative"></span>Klicka här för att spela</button> <span><button type="submit" id="pauseButton" >pausa musiken</button></span>
+        </section>
+        
+    </div>
+    
+    <script src="javascript.js"></script>
+    <script src="_jquery.js"></script>
+    <script src="canvasgame.js"></script>
+    <script src="jQueryFx.js"></script>
+</body>
+</html>
